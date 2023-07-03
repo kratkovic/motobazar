@@ -8,9 +8,9 @@ package motobazar;
  *
  * @author Kiki
  */
-public class MotobazarAPP {
+public class Start {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+    
     }
 }

@@ -11,4 +11,60 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>motobazar.MotobazarAPP</exec.mainClass>
     </properties>
+    
+      <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.1.7.Final</version>
+         </dependency>
+         
+         
+         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+            <dependency>
+                <groupId>com.github.javafaker</groupId>
+                <artifactId>javafaker</artifactId>
+                <version>1.0.2</version>
+            </dependency>
+            
+            
+             <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.3</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/us.codecraft/xsoup -->
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>xsoup</artifactId>
+            <version>0.3.2</version>
+        </dependency>
+
+ <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+          <dependency>
+               <groupId>com.github.lgooddatepicker</groupId>
+               <artifactId>LGoodDatePicker</artifactId>
+               <version>11.2.1</version>
+          </dependency>
+          <dependency>
+               <groupId>org.netbeans.external</groupId>
+               <artifactId>AbsoluteLayout</artifactId>
+               <version>RELEASE160</version>
+          </dependency>
+     </dependencies>
+        
 </project>
