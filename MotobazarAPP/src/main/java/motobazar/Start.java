@@ -4,10 +4,7 @@
 
 package motobazar;
 
-/**
- *
- * @author Kiki
- */
+
 public class Start {
 
     public static void main(String[] args) {
