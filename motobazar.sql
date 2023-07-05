@@ -4,6 +4,7 @@ drop database if exists motobazar;
 create database motobazar;
 use motobazar;
 
+-- Kreiranje tablice "Korisnik"
 CREATE TABLE Korisnik (
     sifra INT PRIMARY KEY AUTO_INCREMENT,
     ime VARCHAR(50),
@@ -13,6 +14,14 @@ CREATE TABLE Korisnik (
     lozinka VARCHAR(50)
 );
 
+-- Kreiranje tablice "Kategorija"
+CREATE TABLE Kategorija (
+    sifra INT PRIMARY KEY AUTO_INCREMENT,
+    naziv VARCHAR(50),
+    opis TEXT
+);
+
+-- Kreiranje tablice "Dio"
 CREATE TABLE Dio (
     sifra INT PRIMARY KEY AUTO_INCREMENT,
     naziv VARCHAR(100),
@@ -22,12 +31,12 @@ CREATE TABLE Dio (
     opis TEXT,
     slika_url VARCHAR(255),
     korisnik_sifra INT,
-    lokacija VARCHAR(100),
-    telefon VARCHAR(20),
-    datum_unosa DATE,
-    FOREIGN KEY (korisnik_sifra) REFERENCES Korisnik(sifra)
+    kategorija_sifra INT,
+    FOREIGN KEY (korisnik_sifra) REFERENCES Korisnik(sifra),
+    FOREIGN KEY (kategorija_sifra) REFERENCES Kategorija(sifra)
 );
 
+-- Kreiranje tablice "Poruka"
 CREATE TABLE Poruka (
     sifra INT PRIMARY KEY AUTO_INCREMENT,
     posiljatelj_sifra INT,
@@ -38,6 +47,7 @@ CREATE TABLE Poruka (
     FOREIGN KEY (primatelj_sifra) REFERENCES Korisnik(sifra)
 );
 
+-- Kreiranje tablice "Ocjena"
 CREATE TABLE Ocjena (
     sifra INT PRIMARY KEY AUTO_INCREMENT,
     dio_sifra INT,
