@@ -5,7 +5,7 @@ create database motobazar;
 use motobazar;
 
 CREATE TABLE Korisnik (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    sifra INT PRIMARY KEY AUTO_INCREMENT,
     ime VARCHAR(50),
     prezime VARCHAR(50),
     adresa VARCHAR(100),
@@ -14,32 +14,37 @@ CREATE TABLE Korisnik (
 );
 
 CREATE TABLE Dio (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    sifra INT PRIMARY KEY AUTO_INCREMENT,
     naziv VARCHAR(100),
     proizvodac VARCHAR(50),
     cijena DECIMAL(10, 2),
     kolicina INT,
+    opis TEXT,
+    slika_url VARCHAR(255),
+    korisnik_sifra INT,
+    lokacija VARCHAR(100),
+    telefon VARCHAR(20),
     datum_unosa DATE,
-    korisnik_id INT,
-    FOREIGN KEY (korisnik_id) REFERENCES Korisnik(id)
+    FOREIGN KEY (korisnik_sifra) REFERENCES Korisnik(sifra)
 );
 
 CREATE TABLE Poruka (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    posiljatelj_id INT,
-    primatelj_id INT,
+    sifra INT PRIMARY KEY AUTO_INCREMENT,
+    posiljatelj_sifra INT,
+    primatelj_sifra INT,
     sadrzaj TEXT,
     datum_vrijeme DATETIME,
-    FOREIGN KEY (posiljatelj_id) REFERENCES Korisnik(id),
-    FOREIGN KEY (primatelj_id) REFERENCES Korisnik(id)
+    FOREIGN KEY (posiljatelj_sifra) REFERENCES Korisnik(sifra),
+    FOREIGN KEY (primatelj_sifra) REFERENCES Korisnik(sifra)
 );
 
 CREATE TABLE Ocjena (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    dio_id INT,
-    korisnik_id INT,
+    sifra INT PRIMARY KEY AUTO_INCREMENT,
+    dio_sifra INT,
+    korisnik_sifra INT,
     ocjena INT,
-    FOREIGN KEY (dio_id) REFERENCES Dio(id),
-    FOREIGN KEY (korisnik_id) REFERENCES Korisnik(id)
+    FOREIGN KEY (dio_sifra) REFERENCES Dio(sifra),
+    FOREIGN KEY (korisnik_sifra) REFERENCES Korisnik(sifra)
 );
+
 
