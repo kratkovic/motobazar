@@ -4,10 +4,7 @@
  */
 package motobazar.util;
 
-/**
- *
- * @author Kiki
- */
+
 public class Alati {
     
 }
