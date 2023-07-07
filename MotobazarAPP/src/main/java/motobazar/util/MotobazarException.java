@@ -13,6 +13,7 @@ public class MotobazarException extends Exception{
         super();
         this.poruka = poruka;
     }
+    
     public String getPoruka(){
         return poruka;
     }
