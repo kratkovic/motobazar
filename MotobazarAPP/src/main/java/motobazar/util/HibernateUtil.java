@@ -20,6 +20,7 @@ public class HibernateUtil {
           
             session = new Configuration().configure().buildSessionFactory().openSession();
         }
+        
         return session;
 
     }
