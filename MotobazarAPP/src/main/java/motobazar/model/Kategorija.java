@@ -5,6 +5,6 @@
 package motobazar.model;
 
 
-public class Dio extends Entitet{
+public class Kategorija extends Entitet{
     
 }
