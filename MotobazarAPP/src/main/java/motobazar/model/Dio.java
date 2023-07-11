@@ -4,7 +4,9 @@
  */
 package motobazar.model;
 
+import jakarta.persistence.Entity;
 
+@Entity
 public class Dio extends Entitet{
     
 }
