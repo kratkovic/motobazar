@@ -4,10 +4,9 @@
  */
 package motobazar.model;
 
-/**
- *
- * @author Kiki
- */
-public class Poruka {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Poruka extends Entitet{
     
 }
