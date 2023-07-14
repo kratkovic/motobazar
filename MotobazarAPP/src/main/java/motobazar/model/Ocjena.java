@@ -6,7 +6,6 @@ package motobazar.model;
 
 import jakarta.persistence.Entity;
 
-
 @Entity
 public class Ocjena extends Entitet{
     
