@@ -13,4 +13,5 @@ public class Korisnik extends Entitet{
     private String ime;
     private String prezime;
     private String adresa;
+    private String email;
 }
