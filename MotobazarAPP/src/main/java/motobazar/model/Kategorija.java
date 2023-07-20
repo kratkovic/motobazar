@@ -7,7 +7,8 @@ package motobazar.model;
 import jakarta.persistence.Entity;
 
 @Entity
-public class Kategorija extends Entitet{
+public class Kategorija extends Entitet {
+
     private String naziv;
     private String opis;
 
@@ -15,11 +16,11 @@ public class Kategorija extends Entitet{
         super();
     }
 
-    public Kategorija (String naziv, String opis, int sifra) {
+    public Kategorija(String naziv, String opis, int sifra) {
         super(sifra);
         this.naziv = naziv;
         this.opis = opis;
-        
+
     }
 
     public String getNaziv() {
@@ -38,8 +39,4 @@ public class Kategorija extends Entitet{
         this.opis = opis;
     }
 
-   
-    
-    
-    
 }
