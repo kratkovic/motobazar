@@ -31,8 +31,7 @@ public class Alati {
             Document d = Jsoup.parse(sb.toString());
             return Xsoup.compile("/html/body/div[1]/div[1]/text()").evaluate(d).get();
 
-            //System.out.println(sb.toString());
-        } catch (Exception e) {
+          } catch (Exception e) {
         }
 
         return "";
