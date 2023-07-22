@@ -5,8 +5,19 @@
 package motobazar.model;
 
 import jakarta.persistence.Entity;
+import java.math.BigDecimal;
 
 @Entity
 public class Dio extends Entitet{
+    
+    private String naziv;
+    private String proizvodac;
+    private BigDecimal cijena;
+    private String kolicina;
+    private String opis;
+    private Korisnik korisnik;
+    private Kategorija kategorija;
+    
+    
     
 }
