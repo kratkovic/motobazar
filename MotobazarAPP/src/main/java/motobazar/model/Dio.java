@@ -17,6 +17,10 @@ public class Dio extends Entitet{
     private String opis;
     private Korisnik korisnik;
     private Kategorija kategorija;
+
+    public Dio() {
+        super();
+    }
     
     
     
