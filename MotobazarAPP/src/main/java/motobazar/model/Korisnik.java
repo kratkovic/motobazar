@@ -33,8 +33,9 @@ public class Korisnik extends Entitet {
     @Column(name = "lozinka")
     private String lozinka;
 
-    // Konstruktori
+    
     public Korisnik() {
+        super();
     }
 
     public Korisnik(String ime, String prezime, String adresa, String email, String lozinka) {
