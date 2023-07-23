@@ -49,7 +49,6 @@ public class Kategorija extends Entitet {
         return opis;
     }
 
-    // Set metode
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
