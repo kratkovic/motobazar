@@ -18,7 +18,6 @@ import java.util.Date;
 @Entity
 public class Poruka extends Entitet{
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra")
