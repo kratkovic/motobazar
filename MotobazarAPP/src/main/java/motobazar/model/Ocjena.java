@@ -59,7 +59,6 @@ public class Ocjena extends Entitet{
         return ocjena;
     }
 
-    // Set metode
     public void setDio(Dio dio) {
         this.dio = dio;
     }
