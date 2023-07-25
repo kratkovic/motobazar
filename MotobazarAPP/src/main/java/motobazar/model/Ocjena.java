@@ -33,6 +33,7 @@ public class Ocjena extends Entitet{
 
 
     public Ocjena() {
+        super();
     }
 
     public Ocjena(Dio dio, Korisnik korisnik, int ocjena) {
