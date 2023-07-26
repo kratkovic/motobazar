@@ -100,7 +100,6 @@ public class Dio extends Entitet{
         return kategorija;
     }
 
-    
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
