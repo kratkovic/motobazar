@@ -9,7 +9,8 @@ import org.hibernate.cfg.Configuration;
 
 
 public class HibernateUtil {
-      private static Session session = null;
+    
+    private static Session session = null;
 
     protected HibernateUtil() {
 
