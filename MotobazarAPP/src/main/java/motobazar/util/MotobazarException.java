@@ -7,7 +7,6 @@ package motobazar.util;
 
 public class MotobazarException extends Exception{
     
-    
     private String poruka;
     
     public MotobazarException(String poruka){
