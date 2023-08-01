@@ -17,6 +17,7 @@
         <property name="hbm2ddl.auto">update</property>
     
         <mapping class="motobazar.model.Korisnik" /> 
+        <mapping class="motobazar.model.Dio" /> 
 
   
  
