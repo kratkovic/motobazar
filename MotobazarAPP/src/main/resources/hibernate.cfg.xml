@@ -19,6 +19,8 @@
         <mapping class="motobazar.model.Korisnik" /> 
         <mapping class="motobazar.model.Dio" /> 
         <mapping class="motobazar.model.Kategorija" />
+        <mapping class="motobazar.model.Ocjena" />
+        
 
   
  
