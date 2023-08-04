@@ -20,6 +20,7 @@
         <mapping class="motobazar.model.Dio" /> 
         <mapping class="motobazar.model.Kategorija" />
         <mapping class="motobazar.model.Ocjena" />
+        <mapping class="motobazar.model.Poruka" />
         
 
   
