@@ -21,6 +21,7 @@
         <mapping class="motobazar.model.Kategorija" />
         <mapping class="motobazar.model.Ocjena" />
         <mapping class="motobazar.model.Poruka" />
+        <mapping class="motobazar.model.Operater" />
         
 
   
