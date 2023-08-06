@@ -28,4 +28,17 @@ public abstract class Obrada<T extends Entitet> {
 
     }
 
+    public void create() throws MotobazarException {
+        if (entitet == null) {
+            throw new MotobazarException("Entitet je null");
+        }
+        kontrolaUnos();
+        persist();
+    }
+
+    private void persist(){
+        session.beginTransaction();
+        session.persist(entitet);
+        session.getTransaction().commit();
+    }
 }
