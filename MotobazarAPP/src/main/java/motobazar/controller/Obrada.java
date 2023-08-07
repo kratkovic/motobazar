@@ -36,11 +36,18 @@ public abstract class Obrada<T extends Entitet> {
         persist();
     }
 
-    private void update() throws MotobazarException{
+    public void update() throws MotobazarException{
         kontrolaPromjena();
         persist();
     }
     
+    public void delete()throws MotobazarException{
+        kontrolaBrisanje();
+        session.beginTransaction();
+        session.remove(entitet);
+        session.getTransaction().commit();
+        
+    }
     private void persist(){
         session.beginTransaction();
         session.persist(entitet);
