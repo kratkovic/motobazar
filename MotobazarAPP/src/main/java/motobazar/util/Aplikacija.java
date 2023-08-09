@@ -9,7 +9,7 @@ import motobazar.model.Operater;
 
 public class Aplikacija {
     
-      public static final String NAZIV_APP="MotoBazar APP";
+      public static final String NAZIV_APP = "MotoBazar APP";
       public static Operater OPERATER;
     
     }
