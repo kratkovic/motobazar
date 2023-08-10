@@ -48,11 +48,14 @@ public abstract class Obrada<T extends Entitet> {
         session.getTransaction().commit();
         
     }
+    
     private void persist(){
         session.beginTransaction();
         session.persist(entitet);
         session.getTransaction().commit();
     }
+    
+    
      public T getEntitet() {
         return entitet;
     }
