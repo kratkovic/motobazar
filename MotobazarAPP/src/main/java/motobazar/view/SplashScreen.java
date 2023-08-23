@@ -4,10 +4,7 @@
  */
 package motobazar.view;
 
-/**
- *
- * @author Kiki
- */
+
 public class SplashScreen extends javax.swing.JFrame {
 
     /**
