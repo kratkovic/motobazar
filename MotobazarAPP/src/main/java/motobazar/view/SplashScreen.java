@@ -7,9 +7,7 @@ package motobazar.view;
 
 public class SplashScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SplashScreen
-     */
+    
     public SplashScreen() {
         initComponents();
         ucitaj();
