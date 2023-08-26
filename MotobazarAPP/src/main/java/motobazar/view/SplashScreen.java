@@ -4,6 +4,11 @@
  */
 package motobazar.view;
 
+import javax.swing.JOptionPane;
+import motobazar.controller.ObradaOperater;
+import motobazar.util.HibernateUtil;
+import org.hibernate.Session;
+
 
 public class SplashScreen extends javax.swing.JFrame {
 
@@ -39,7 +44,26 @@ public class SplashScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ucitaj() {
-      
+        new Ucitanje().start();
+    }
+    private class Ucitanje extends Thread{
+
+        @Override
+        public void run() {
+            Session s = HibernateUtil.getSession();
+            if(!s.getMetamodel().getEntities().isEmpty()){
+                ObradaOperater op = new ObradaOperater();
+                if(op.read().isEmpty()){
+                    op.unosAdminOperatera();
+                    
+                }
+                new ProzorLogin().setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(getRootPane(), "Problem s bazom podataka");
+            }
+           
+        }
     }
 
     /**
