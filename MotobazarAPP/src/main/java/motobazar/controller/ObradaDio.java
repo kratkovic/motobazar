@@ -25,11 +25,35 @@ public class ObradaDio extends Obrada<Dio> {
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-        
+         kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
+        kontrolaBrojClanova();
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
        
+    }
+
+    private void kontrolaNazivNull() {
+        
+    }
+
+    private void kontrolaNazivNijeBroj() {
+      
+    }
+
+    private void kontrolaNazivMinimalnaDuzina() {
+      
+    }
+
+    private void kontrolaNazivMaksimalnaDuzina() {
+     
+    }
+
+    private void kontrolaBrojClanova() {
+      
     }
 }
