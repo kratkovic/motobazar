@@ -26,10 +26,10 @@ public class ObradaDio extends Obrada<Dio> {
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
          kontrolaNazivNull();
-        kontrolaNazivNijeBroj();
-        kontrolaNazivMinimalnaDuzina();
-        kontrolaNazivMaksimalnaDuzina();
-        kontrolaBrojClanova();
+         kontrolaNazivNijeBroj();
+         kontrolaNazivMinimalnaDuzina();
+         kontrolaNazivMaksimalnaDuzina();
+         kontrolaBrojClanova();
     }
 
     @Override
