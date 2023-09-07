@@ -48,9 +48,11 @@ public class ObradaOperater extends Obrada<Operater>{
 
         if (BCrypt.checkpw(new String(lozinka),
                 new String(o.getLozinka()))) {
+            
             return o;
         }
 
+        
         return null;
     }
 
