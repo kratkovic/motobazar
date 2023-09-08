@@ -29,7 +29,7 @@ public class ObradaDio extends Obrada<Dio> {
          kontrolaNazivNijeBroj();
          kontrolaNazivMinimalnaDuzina();
          kontrolaNazivMaksimalnaDuzina();
-         kontrolaBrojClanova();
+       
     }
 
     @Override
@@ -53,7 +53,4 @@ public class ObradaDio extends Obrada<Dio> {
      
     }
 
-    private void kontrolaBrojClanova() {
-      
-    }
 }
