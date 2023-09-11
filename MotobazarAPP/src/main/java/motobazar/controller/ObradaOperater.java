@@ -51,8 +51,7 @@ public class ObradaOperater extends Obrada<Operater>{
             
             return o;
         }
-
-        
+       
         return null;
     }
 
