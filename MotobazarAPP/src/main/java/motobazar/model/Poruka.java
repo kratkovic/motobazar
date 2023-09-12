@@ -51,7 +51,6 @@ public class Poruka extends Entitet{
         this.datumVrijeme = datumVrijeme;
     }
 
-  
     @Override
     public int getSifra() {
         return sifra;
