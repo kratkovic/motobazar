@@ -72,7 +72,6 @@ public class Poruka extends Entitet{
         return datumVrijeme;
     }
 
-
     public void setPosiljatelj(Korisnik posiljatelj) {
         this.posiljatelj = posiljatelj;
     }
