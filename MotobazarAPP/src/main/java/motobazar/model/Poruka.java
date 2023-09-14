@@ -87,6 +87,7 @@ public class Poruka extends Entitet{
     public void setDatumVrijeme(Date datumVrijeme) {
         this.datumVrijeme = datumVrijeme;
     }
+    
 }
 
 
