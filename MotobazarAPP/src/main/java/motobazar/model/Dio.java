@@ -47,8 +47,7 @@ public class Dio extends Entitet{
     @JoinColumn(name = "kategorija_sifra")
     private Kategorija kategorija;
 
- 
-    public Dio() {
+     public Dio() {
         super();
     }
 
