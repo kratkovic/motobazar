@@ -24,12 +24,31 @@ public class ObradaKategorija extends Obrada<Kategorija>  {
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-      
+         kontrolaNazivNull();
+         kontrolaNazivNijeBroj();
+         kontrolaNazivMinimalnaDuzina();
+         kontrolaNazivMaksimalnaDuzina();
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
        
+    }
+
+    private void kontrolaNazivNull() {
+      
+    }
+
+    private void kontrolaNazivNijeBroj() {
+       
+    }
+
+    private void kontrolaNazivMinimalnaDuzina() {
+       
+    }
+
+    private void kontrolaNazivMaksimalnaDuzina() {
+        
     }
     
 }
