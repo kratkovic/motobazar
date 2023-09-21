@@ -9,7 +9,6 @@ import motobazar.model.Dio;
 import motobazar.util.MotobazarException;
 
 
-
 public class ObradaDio extends Obrada<Dio> {
 
     @Override
