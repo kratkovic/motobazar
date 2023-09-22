@@ -4,10 +4,31 @@
  */
 package motobazar.controller;
 
-/**
- *
- * @author Kiki
- */
-public class ObradaOcjena {
+import java.util.List;
+import motobazar.model.Ocjena;
+import motobazar.util.MotobazarException;
+
+
+public class ObradaOcjena extends Obrada<Ocjena>{
+
+    @Override
+    public List<Ocjena> read() {
+       return null;
+    }
+
+    @Override
+    protected void kontrolaUnos() throws MotobazarException {
+     
+    }
+
+    @Override
+    protected void kontrolaPromjena() throws MotobazarException {
+        
+    }
+
+    @Override
+    protected void kontrolaBrisanje() throws MotobazarException {
+        
+    }
     
 }
