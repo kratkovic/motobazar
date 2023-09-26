@@ -38,10 +38,12 @@ public class ObradaDio extends Obrada<Dio> {
        
     }
 
-    private void kontrolaNazivNull() {
-        
+    private void kontrolaNazivNull() throws MotobazarException {
+          if (entitet.getNaziv() == null) {
+            throw new MotobazarException("Naziv mora biti postavljen");
     }
-
+          
+    }
     private void kontrolaNazivNijeBroj() {
       
     }
