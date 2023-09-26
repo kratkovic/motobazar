@@ -8,52 +8,60 @@ import java.util.List;
 import motobazar.model.Dio;
 import motobazar.util.MotobazarException;
 
-
 public class ObradaDio extends Obrada<Dio> {
 
     @Override
     public List<Dio> read() {
-       
+
         return session.createQuery("from Dio", Dio.class).list();
-       
+
     }
 
-    
     @Override
     protected void kontrolaUnos() throws MotobazarException {
-      
+
     }
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-         kontrolaNazivNull();
-         kontrolaNazivNijeBroj();
-         kontrolaNazivMinimalnaDuzina();
-         kontrolaNazivMaksimalnaDuzina();
-       
+        kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
+
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-       
+
     }
 
     private void kontrolaNazivNull() throws MotobazarException {
-          if (entitet.getNaziv() == null) {
+        if (entitet.getNaziv() == null) {
             throw new MotobazarException("Naziv mora biti postavljen");
+        }
+
     }
-          
-    }
-    private void kontrolaNazivNijeBroj() {
-      
+
+    private void kontrolaNazivNijeBroj() throws MotobazarException {
+        boolean broj = false;
+        try {
+            Double.valueOf(entitet.getNaziv());
+            broj = true;
+        } catch (Exception e) {
+        }
+
+        if (broj) {
+            throw new MotobazarException("Naziv dio za motor ne smije biti broj");
+        }
     }
 
     private void kontrolaNazivMinimalnaDuzina() {
-      
+
     }
 
     private void kontrolaNazivMaksimalnaDuzina() {
-     
+
     }
 
 }
