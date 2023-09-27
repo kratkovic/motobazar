@@ -8,46 +8,47 @@ import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
 
-public class ObradaKategorija extends Obrada<Kategorija>  {
+
+public class ObradaKategorija extends Obrada<Kategorija> {
 
     @Override
     public List<Kategorija> read() {
-        
-         return session.createQuery("from Kategorija", Kategorija.class).list();
+
+        return session.createQuery("from Kategorija", Kategorija.class).list();
     }
 
     @Override
     protected void kontrolaUnos() throws MotobazarException {
-      
+
     }
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-         kontrolaNazivNull();
-         kontrolaNazivNijeBroj();
-         kontrolaNazivMinimalnaDuzina();
-         kontrolaNazivMaksimalnaDuzina();
+        kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-       
+
     }
 
     private void kontrolaNazivNull() {
-      
+
     }
 
     private void kontrolaNazivNijeBroj() {
-       
+
     }
 
     private void kontrolaNazivMinimalnaDuzina() {
-       
+
     }
 
     private void kontrolaNazivMaksimalnaDuzina() {
-        
+
     }
-    
+
 }
