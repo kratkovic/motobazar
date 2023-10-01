@@ -29,6 +29,7 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         kontrolaNazivMaksimalnaDuzina();
     }
 
+    
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
 
