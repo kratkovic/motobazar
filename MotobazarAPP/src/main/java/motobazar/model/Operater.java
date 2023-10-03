@@ -11,7 +11,6 @@ import jakarta.persistence.Entity;
 @Entity
 public class Operater extends Entitet{
     
-    
     private String ime;
     private String prezime;
     private String email;
