@@ -65,12 +65,20 @@ public class ObradaDio extends Obrada<Dio> {
 
     }
 
-    private void kontrolaNaziv() {
-       
+    private void kontrolaNaziv() throws MotobazarException {
+        kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
+        kontrolaNazivDupliUBazi();
     }
 
     private void kontrolaKolicina() {
         
+    }
+
+    private void kontrolaNazivDupliUBazi() {
+       
     }
 
 }
