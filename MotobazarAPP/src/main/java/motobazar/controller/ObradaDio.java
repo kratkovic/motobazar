@@ -57,10 +57,13 @@ public class ObradaDio extends Obrada<Dio> {
         }
     }
 
-    private void kontrolaNazivMinimalnaDuzina() {
-
+    private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
+        if (entitet.getNaziv().trim().length() < 3) {
+            throw new MotobazarException("Naziv dio za motor mora imati minimalno 3 znaka");
     }
-
+        
+    }
+    
     private void kontrolaNazivMaksimalnaDuzina() {
 
     }
