@@ -31,7 +31,6 @@ public class ObradaDio extends Obrada<Dio> {
         kontrolaNazivMaksimalnaDuzina();
 
     }
-
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
 
