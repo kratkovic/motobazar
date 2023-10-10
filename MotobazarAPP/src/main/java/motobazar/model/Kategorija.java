@@ -13,7 +13,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Kategorija extends Entitet {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra")
