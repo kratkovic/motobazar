@@ -40,6 +40,7 @@ public class Poruka extends Entitet{
     private Date datumVrijeme;
 
     
+
     public Poruka() {
         super();
     }
