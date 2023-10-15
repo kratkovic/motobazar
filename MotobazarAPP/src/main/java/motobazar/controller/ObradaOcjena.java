@@ -8,7 +8,6 @@ import java.util.List;
 import motobazar.model.Ocjena;
 import motobazar.util.MotobazarException;
 
-
 public class ObradaOcjena extends Obrada<Ocjena>{
 
     @Override
