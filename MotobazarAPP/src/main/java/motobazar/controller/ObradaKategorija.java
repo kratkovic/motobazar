@@ -28,14 +28,15 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         kontrolaNazivMaksimalnaDuzina();
     }
 
-    
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
 
     }
 
-    private void kontrolaNazivNull() {
-
+    private void kontrolaNazivNull() throws MotobazarException {
+        if (entitet.getNaziv() == null) {
+            throw new MotobazarException("Naziv mora biti postavljen");
+        }
     }
 
     private void kontrolaNazivNijeBroj() {
