@@ -39,7 +39,17 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         }
     }
 
-    private void kontrolaNazivNijeBroj() {
+    private void kontrolaNazivNijeBroj()throws MotobazarException{
+       boolean broj = false;
+        try {
+            Double.valueOf(entitet.getNaziv());
+            broj = true;
+        } catch (Exception e) {
+        }
+
+        if (broj) {
+            throw new MotobazarException("Naziv kategorije ne smije biti broj");
+        }
 
     }
 
