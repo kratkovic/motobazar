@@ -31,6 +31,7 @@ public class ObradaDio extends Obrada<Dio> {
         kontrolaNazivMaksimalnaDuzina();
 
     }
+
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
 
@@ -59,12 +60,14 @@ public class ObradaDio extends Obrada<Dio> {
     private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
         if (entitet.getNaziv().trim().length() < 3) {
             throw new MotobazarException("Naziv dio za motor mora imati minimalno 3 znaka");
-    }
-        
-    }
-    
-    private void kontrolaNazivMaksimalnaDuzina() {
+        }
 
+    }
+
+    private void kontrolaNazivMaksimalnaDuzina() throws MotobazarException {
+        if (entitet.getNaziv().trim().length() > 50) {
+            throw new MotobazarException("Naziv dio za motor može imati minimalno 50 znakova");
+        }
     }
 
     private void kontrolaNaziv() throws MotobazarException {
@@ -76,11 +79,11 @@ public class ObradaDio extends Obrada<Dio> {
     }
 
     private void kontrolaKolicina() {
-        
+
     }
 
     private void kontrolaNazivDupliUBazi() {
-       
+
     }
 
 }
