@@ -39,8 +39,8 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         }
     }
 
-    private void kontrolaNazivNijeBroj()throws MotobazarException{
-       boolean broj = false;
+    private void kontrolaNazivNijeBroj() throws MotobazarException {
+        boolean broj = false;
         try {
             Double.valueOf(entitet.getNaziv());
             broj = true;
@@ -53,8 +53,10 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
     }
 
-    private void kontrolaNazivMinimalnaDuzina() {
-
+    private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
+        if (entitet.getNaziv().trim().length() < 3) {
+            throw new MotobazarException("Naziv kategorije mora imati minimalno 3 znaka");
+        }
     }
 
     private void kontrolaNazivMaksimalnaDuzina() {
