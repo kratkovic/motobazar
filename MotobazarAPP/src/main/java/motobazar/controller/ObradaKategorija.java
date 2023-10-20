@@ -59,8 +59,10 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         }
     }
 
-    private void kontrolaNazivMaksimalnaDuzina() {
+    private void kontrolaNazivMaksimalnaDuzina() throws MotobazarException {
+        if (entitet.getNaziv().trim().length() > 50) {
+            throw new MotobazarException("Naziv kategorije može imati minimalno 50 znakova");
+        }
 
     }
-
 }
