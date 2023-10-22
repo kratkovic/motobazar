@@ -10,6 +10,7 @@ import motobazar.util.MotobazarException;
 
 public class ObradaKategorija extends Obrada<Kategorija> {
 
+    
     @Override
     public List<Kategorija> read() {
         return session.createQuery("from Kategorija", Kategorija.class).list();
