@@ -10,8 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class Korisnik extends Entitet {
+   @Entity
+   public class Korisnik extends Entitet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
