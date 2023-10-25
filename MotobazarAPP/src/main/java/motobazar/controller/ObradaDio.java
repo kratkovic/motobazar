@@ -49,7 +49,7 @@ public class ObradaDio extends Obrada<Dio> {
         try {
             Double.valueOf(entitet.getNaziv());
             broj = true;
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
         }
 
         if (broj) {
