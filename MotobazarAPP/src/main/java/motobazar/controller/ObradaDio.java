@@ -51,7 +51,6 @@ public class ObradaDio extends Obrada<Dio> {
             broj = true;
         } catch (Exception e) {
         }
-
         if (broj) {
             throw new MotobazarException("Naziv dio za motor ne smije biti broj");
         }
