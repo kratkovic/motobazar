@@ -12,8 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-   @Entity
-   public class Ocjena extends Entitet{
+    @Entity
+    public class Ocjena extends Entitet{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
