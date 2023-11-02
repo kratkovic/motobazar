@@ -42,7 +42,6 @@ import jakarta.persistence.ManyToOne;
         this.ocjena = ocjena;
     }
 
-
     @Override
     public int getSifra() {
         return sifra;
