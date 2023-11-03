@@ -46,7 +46,6 @@ import jakarta.persistence.Id;
         this.lozinka = lozinka;
     }
 
-   
     @Override
     public int getSifra() {
         return sifra;
