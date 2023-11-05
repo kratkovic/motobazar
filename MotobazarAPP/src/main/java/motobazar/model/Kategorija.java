@@ -34,7 +34,6 @@ public class Kategorija extends Entitet {
         this.opis = opis;
     }
 
-   
     @Override
     public int getSifra() {
         return sifra;
