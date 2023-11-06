@@ -39,7 +39,6 @@ public class Poruka extends Entitet{
     @Temporal(TemporalType.TIMESTAMP)
     private Date datumVrijeme;
 
-    
     public Poruka() {
         super();
     }
