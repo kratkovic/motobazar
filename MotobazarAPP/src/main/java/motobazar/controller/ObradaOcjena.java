@@ -22,12 +22,31 @@ public class ObradaOcjena extends Obrada<Ocjena>{
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-        
+        kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
         
+    }
+
+    private void kontrolaNazivNull() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void kontrolaNazivNijeBroj() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void kontrolaNazivMinimalnaDuzina() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void kontrolaNazivMaksimalnaDuzina() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
