@@ -22,10 +22,8 @@ public class ObradaOcjena extends Obrada<Ocjena>{
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-        kontrolaNazivNull();
-        kontrolaNazivNijeBroj();
-        kontrolaNazivMinimalnaDuzina();
-        kontrolaNazivMaksimalnaDuzina();
+        kontrolaDio();
+       
     }
 
     @Override
@@ -33,20 +31,9 @@ public class ObradaOcjena extends Obrada<Ocjena>{
         
     }
 
-    private void kontrolaNazivNull() {
+    private void kontrolaDio() {
         
     }
 
-    private void kontrolaNazivNijeBroj() {
-       
-    }
-
-    private void kontrolaNazivMinimalnaDuzina() {
-        
-    }
-
-    private void kontrolaNazivMaksimalnaDuzina() {
-      
-    }
-    
+   
 }
