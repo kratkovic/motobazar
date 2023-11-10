@@ -47,7 +47,6 @@ public class ObradaKategorija extends Obrada<Kategorija> {
             broj = true;
         } catch (Exception e) {
         }
-
         if (broj) {
             throw new MotobazarException("Naziv kategorije ne smije biti broj");
         }
