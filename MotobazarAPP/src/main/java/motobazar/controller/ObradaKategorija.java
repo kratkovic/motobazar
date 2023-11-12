@@ -52,8 +52,7 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         }
 
     }
-
-    private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
+     private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
         if (entitet.getNaziv().trim().length() < 3) {
             throw new MotobazarException("Naziv kategorije mora imati minimalno 3 znaka");
         }
