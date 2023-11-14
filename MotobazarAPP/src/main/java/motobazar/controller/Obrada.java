@@ -28,7 +28,6 @@ public abstract class Obrada<T extends Entitet> {
 
     }
 
-
     public void create() throws MotobazarException {
         if (entitet == null) {
             throw new MotobazarException("Entitet je null");
