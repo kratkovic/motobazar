@@ -51,6 +51,7 @@ public class Dio extends Entitet{
         super();
     }
 
+     
     public Dio(String naziv, String proizvodac, BigDecimal cijena, int kolicina, String opis, String slika_url, Korisnik korisnik, Kategorija kategorija) {
         this.naziv = naziv;
         this.proizvodac = proizvodac;
