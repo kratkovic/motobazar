@@ -25,6 +25,7 @@ public class Kategorija extends Entitet {
     private String opis;
 
 
+    
     public Kategorija() {
         super();
     }
