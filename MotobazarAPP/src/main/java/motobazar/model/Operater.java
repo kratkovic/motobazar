@@ -8,8 +8,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 
-@Entity
-public class Operater extends Entitet{
+   @Entity
+   public class Operater extends Entitet{
     
     private String ime;
     private String prezime;
