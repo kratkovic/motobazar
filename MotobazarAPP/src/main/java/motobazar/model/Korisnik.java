@@ -10,8 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-    @Entity
-    public class Korisnik extends Entitet {
+@Entity
+public class Korisnik extends Entitet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,6 @@ import jakarta.persistence.Id;
     @Column(name = "lozinka")
     private String lozinka;
 
-    
     public Korisnik() {
         super();
     }
@@ -71,7 +70,6 @@ import jakarta.persistence.Id;
         return lozinka;
     }
 
-
     public void setIme(String ime) {
         this.ime = ime;
     }
@@ -92,5 +90,3 @@ import jakarta.persistence.Id;
         this.lozinka = lozinka;
     }
 }
-
-
