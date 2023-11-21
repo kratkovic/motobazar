@@ -12,9 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-    @Entity
-    public class Ocjena extends Entitet{
-    
+@Entity
+public class Ocjena extends Entitet {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra")
@@ -30,7 +30,6 @@ import jakarta.persistence.ManyToOne;
 
     @Column(name = "ocjena")
     private int ocjena;
-
 
     public Ocjena() {
         super();
@@ -71,6 +70,3 @@ import jakarta.persistence.ManyToOne;
         this.ocjena = ocjena;
     }
 }
-
-    
-
