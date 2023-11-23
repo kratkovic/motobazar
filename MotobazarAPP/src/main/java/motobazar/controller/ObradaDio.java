@@ -77,9 +77,15 @@ public class ObradaDio extends Obrada<Dio> {
         kontrolaNazivDupliUBazi();
     }
 
-    private void kontrolaKolicina() {
+    private void kontrolaKolicina() throws MotobazarException {
+        Integer kolicina = entitet.getKolicina();
 
-    }
+        if (kolicina == null || kolicina < 1 || kolicina > 100) {
+            throw new MotobazarException("Količina mora biti postavljena, biti barem 1 i ne može biti veća od 100");
+        }
+
+
+}
 
     private void kontrolaNazivDupliUBazi() {
 
