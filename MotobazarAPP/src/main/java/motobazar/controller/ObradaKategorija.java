@@ -8,6 +8,7 @@ import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
 
+
 public class ObradaKategorija extends Obrada<Kategorija> {
 
     
