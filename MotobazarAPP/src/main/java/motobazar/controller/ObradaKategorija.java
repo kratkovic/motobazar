@@ -8,10 +8,8 @@ import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
 
-
 public class ObradaKategorija extends Obrada<Kategorija> {
 
-    
     @Override
     public List<Kategorija> read() {
         return session.createQuery("from Kategorija", Kategorija.class).list();
@@ -19,7 +17,8 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
     @Override
     protected void kontrolaUnos() throws MotobazarException {
-
+        kontrolaNaziv();
+        kontrolaOpis();
     }
 
     @Override
@@ -53,7 +52,8 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         }
 
     }
-     private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
+
+    private void kontrolaNazivMinimalnaDuzina() throws MotobazarException {
         if (entitet.getNaziv().trim().length() < 3) {
             throw new MotobazarException("Naziv kategorije mora imati minimalno 3 znaka");
         }
@@ -64,5 +64,13 @@ public class ObradaKategorija extends Obrada<Kategorija> {
             throw new MotobazarException("Naziv kategorije može imati minimalno 50 znakova");
         }
 
+    }
+
+    private void kontrolaNaziv() {
+       
+    }
+
+    private void kontrolaOpis() {
+       
     }
 }
