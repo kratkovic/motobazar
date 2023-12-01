@@ -35,8 +35,7 @@ public class ObradaOperater extends Obrada<Operater>{
         }
     }
      
-     
-         public Operater autoriziraj(String email, char[] lozinka) {
+        public Operater autoriziraj(String email, char[] lozinka) {
         Operater o;
         try {
             o = session.createQuery("from Operater o where o.email=:email",
