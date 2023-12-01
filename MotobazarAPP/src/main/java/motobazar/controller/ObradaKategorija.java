@@ -66,11 +66,19 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
     }
 
-    private void kontrolaNaziv() {
-       
+    private void kontrolaNaziv() throws MotobazarException{
+        kontrolaNazivNull();
+        kontrolaNazivNijeBroj();
+        kontrolaNazivMinimalnaDuzina();
+        kontrolaNazivMaksimalnaDuzina();
+        kontrolaNazivDupliUBazi();
     }
 
     private void kontrolaOpis() {
+
+    }
+
+    private void kontrolaNazivDupliUBazi() {
        
     }
 }
