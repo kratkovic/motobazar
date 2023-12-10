@@ -13,8 +13,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
 
-@Entity
-public class Dio extends Entitet{
+    @Entity
+    public class Dio extends Entitet{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
