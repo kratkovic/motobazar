@@ -14,7 +14,8 @@ import us.codecraft.xsoup.Xsoup;
 public class Alati {
      public static String dovuciOib() {
 
-        try {
+       
+         try {
             //https://stackoverflow.com/questions/8616781/how-to-get-a-web-pages-source-code-from-java
             URL url = new URL("http://oib.itcentrala.com/oib-generator/");
             BufferedReader in = new BufferedReader(
