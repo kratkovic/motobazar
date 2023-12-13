@@ -13,7 +13,7 @@ public class ObradaDio extends Obrada<Dio> {
     @Override
     public List<Dio> read() {
 
-        return session.createQuery("from Dio", Dio.class).list();
+    return session.createQuery("from Dio", Dio.class).list();
 
     }
 
