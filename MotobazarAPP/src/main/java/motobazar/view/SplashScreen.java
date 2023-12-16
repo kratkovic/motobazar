@@ -45,8 +45,8 @@ public class SplashScreen extends javax.swing.JFrame {
     }
     private class Ucitanje extends Thread{
 
-        @Override
-        public void run() {
+       @Override
+       public void run() {
             Session s = HibernateUtil.getSession();
             if(!s.getMetamodel().getEntities().isEmpty()){
                 ObradaOperater op = new ObradaOperater();
