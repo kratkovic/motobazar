@@ -7,6 +7,7 @@ package motobazar.controller;
 import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
+import org.hibernate.Transaction;
 
 public class ObradaKategorija extends Obrada<Kategorija> {
 
@@ -66,7 +67,7 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
     }
 
-    private void kontrolaNaziv() throws MotobazarException{
+    private void kontrolaNaziv() throws MotobazarException {
         kontrolaNazivNull();
         kontrolaNazivNijeBroj();
         kontrolaNazivMinimalnaDuzina();
@@ -78,7 +79,29 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
     }
 
-    private void kontrolaNazivDupliUBazi() {
-       
+    private void kontrolaNazivDupliUBazi() throws MotobazarException {
+        List<Kategorija> kategorije = null;
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+
+            kategorije = session.createQuery("from Kategorija k "
+                    + "where k.naziv = :naziv", Kategorija.class)
+                    .setParameter("naziv", entitet.getNaziv())
+                    .list();
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+           
+            throw new MotobazarException("Došlo je do pogreške pri dohvatu kategorije iz baze");
+        }
+
+        if (kategorije != null && !kategorije.isEmpty()) {
+            throw new MotobazarException("Kategorija s istim nazivom već postoji u bazi");
+        }
     }
 }
