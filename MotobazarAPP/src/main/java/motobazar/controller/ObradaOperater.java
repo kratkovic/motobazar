@@ -11,7 +11,6 @@ import motobazar.util.MotobazarException;
 import org.mindrot.jbcrypt.BCrypt;
 
 
-
 public class ObradaOperater extends Obrada<Operater>{
     
     @Override
@@ -35,6 +34,7 @@ public class ObradaOperater extends Obrada<Operater>{
 
         }
     }
+     
      
         public Operater autoriziraj(String email, char[] lozinka) {
         Operater o;
