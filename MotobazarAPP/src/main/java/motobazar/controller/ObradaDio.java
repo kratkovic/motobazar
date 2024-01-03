@@ -7,6 +7,7 @@ package motobazar.controller;
 import java.util.List;
 import motobazar.model.Dio;
 import motobazar.util.MotobazarException;
+import org.hibernate.Transaction;
 
 public class ObradaDio extends Obrada<Dio> {
 
@@ -85,8 +86,31 @@ public class ObradaDio extends Obrada<Dio> {
         }
     }
 
-    private void kontrolaNazivDupliUBazi() {
+    private void kontrolaNazivDupliUBazi() throws MotobazarException {
+        List<Dio> kategorije = null;
+        Transaction transaction = null;
 
+        try {
+            transaction = session.beginTransaction();
+
+            kategorije = session.createQuery("from Dio d "
+                    + "where d.naziv = :naziv", Dio.class)
+                    .setParameter("naziv", entitet.getNaziv())
+                    .list();
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+           
+            throw new MotobazarException("Došlo je do pogreške pri dohvatu dijela iz baze");
+        }
+
+        if (kategorije != null && !kategorije.isEmpty()) {
+            throw new MotobazarException("Dio s istim nazivom već postoji u bazi");
+        }
+    }
     }
 
-}
+
