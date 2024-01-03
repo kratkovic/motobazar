@@ -49,7 +49,7 @@ public class ObradaDio extends Obrada<Dio> {
         try {
             Double.valueOf(entitet.getNaziv());
             broj = true;
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
         }
         if (broj) {
             throw new MotobazarException("Naziv dio za motor ne smije biti broj");
