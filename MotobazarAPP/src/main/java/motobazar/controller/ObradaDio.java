@@ -86,6 +86,7 @@ public class ObradaDio extends Obrada<Dio> {
         }
     }
 
+    
     private void kontrolaNazivDupliUBazi() throws MotobazarException {
         List<Dio> kategorije = null;
         Transaction transaction = null;
