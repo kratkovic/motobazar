@@ -100,6 +100,7 @@ public class ObradaDio extends Obrada<Dio> {
                     .list();
 
             transaction.commit();
+            
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
