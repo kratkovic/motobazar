@@ -35,7 +35,6 @@ public class ObradaOperater extends Obrada<Operater>{
         }
     }
      
-     
         public Operater autoriziraj(String email, char[] lozinka) {
         Operater o;
         try {
