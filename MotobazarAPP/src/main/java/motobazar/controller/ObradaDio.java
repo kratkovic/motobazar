@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package motobazar.controller;
 
 import java.util.List;
@@ -13,9 +9,7 @@ public class ObradaDio extends Obrada<Dio> {
 
     @Override
     public List<Dio> read() {
-
-    return session.createQuery("from Dio", Dio.class).list();
-
+        return session.createQuery("from Dio", Dio.class).list();
     }
 
     @Override
@@ -30,30 +24,35 @@ public class ObradaDio extends Obrada<Dio> {
         kontrolaNazivNijeBroj();
         kontrolaNazivMinimalnaDuzina();
         kontrolaNazivMaksimalnaDuzina();
-
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
+        kontrolaPovezanostiSKategorijom();
+    }
 
+    private void kontrolaPovezanostiSKategorijom() throws MotobazarException {
+        if (provjeriPovezanostSKategorijom(entitet)) {
+            throw new MotobazarException("Nije moguće obrisati dio koji je povezan s kategorijom");
+        }
+    }
+
+    private boolean provjeriPovezanostSKategorijom(Dio dio) {
+        return dio.getKategorija() != null;
     }
 
     private void kontrolaNazivNull() throws MotobazarException {
         if (entitet.getNaziv() == null) {
             throw new MotobazarException("Naziv mora biti postavljen");
         }
-
     }
 
     private void kontrolaNazivNijeBroj() throws MotobazarException {
-        boolean broj = false;
         try {
             Double.valueOf(entitet.getNaziv());
-            broj = true;
-        } catch (Exception e) {
-        }
-        if (broj) {
             throw new MotobazarException("Naziv dio za motor ne smije biti broj");
+        } catch (NumberFormatException e) {
+            // Očekivano ponašanje ako nije broj
         }
     }
 
@@ -61,12 +60,11 @@ public class ObradaDio extends Obrada<Dio> {
         if (entitet.getNaziv().trim().length() < 3) {
             throw new MotobazarException("Naziv dio za motor mora imati minimalno 3 znaka");
         }
-
     }
 
     private void kontrolaNazivMaksimalnaDuzina() throws MotobazarException {
         if (entitet.getNaziv().trim().length() > 50) {
-            throw new MotobazarException("Naziv dio za motor može imati minimalno 50 znakova");
+            throw new MotobazarException("Naziv dio za motor može imati maksimalno 50 znakova");
         }
     }
 
@@ -86,33 +84,29 @@ public class ObradaDio extends Obrada<Dio> {
         }
     }
 
-    
     private void kontrolaNazivDupliUBazi() throws MotobazarException {
-        List<Dio> kategorije = null;
+        List<Dio> dijelovi = null;
         Transaction transaction = null;
 
         try {
             transaction = session.beginTransaction();
 
-            kategorije = session.createQuery("from Dio d "
-                    + "where d.naziv = :naziv", Dio.class)
+            dijelovi = session.createQuery("from Dio d where d.naziv = :naziv", Dio.class)
                     .setParameter("naziv", entitet.getNaziv())
                     .list();
 
             transaction.commit();
-            
+
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-           
-            throw new MotobazarException("Došlo je do pogreške pri dohvatu dijela iz baze");
+
+            throw new MotobazarException("Došlo je do pogreške pri dohvatu dijela iz baze", e);
         }
 
-        if (kategorije != null && !kategorije.isEmpty()) {
+        if (dijelovi != null && !dijelovi.isEmpty()) {
             throw new MotobazarException("Dio s istim nazivom već postoji u bazi");
         }
     }
-    }
-
-
+}
