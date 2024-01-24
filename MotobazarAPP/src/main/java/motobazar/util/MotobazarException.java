@@ -12,6 +12,10 @@ public class MotobazarException extends Exception{
         super();
         this.poruka = poruka;
     }
+
+    public MotobazarException(String došlo_je_do_pogreške_pri_dohvatu_dijela_i, Exception e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public String getPoruka(){
         return poruka;
