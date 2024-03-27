@@ -1,39 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package motobazar.controller;
 
 import java.util.List;
 import motobazar.model.Ocjena;
 import motobazar.util.MotobazarException;
 
-public class ObradaOcjena extends Obrada<Ocjena>{
+public class ObradaOcjena extends Obrada<Ocjena> {
 
     @Override
     public List<Ocjena> read() {
-       return null;
+        return session.createQuery("from Ocjena", Ocjena.class).list();
     }
 
     @Override
     protected void kontrolaUnos() throws MotobazarException {
-     
+        kontrolaOcjena();
     }
 
     @Override
     protected void kontrolaPromjena() throws MotobazarException {
-        kontrolaDio();
-       
+        kontrolaOcjena();
     }
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-        
+        // Možete implementirati dodatnu logiku brisanja ako je potrebno
     }
 
-    private void kontrolaDio() {
-        
-    }
+    private void kontrolaOcjena() throws MotobazarException {
+        int ocjenaVrijednost = entitet.getOcjena();
 
-   
+        if (ocjenaVrijednost < 1 || ocjenaVrijednost > 5) {
+            throw new MotobazarException("Ocjena mora biti u rasponu od 1 do 5.");
+        }
+    }
 }
