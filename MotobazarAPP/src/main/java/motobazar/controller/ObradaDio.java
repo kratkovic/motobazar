@@ -2,6 +2,7 @@ package motobazar.controller;
 
 import java.util.List;
 import motobazar.model.Dio;
+import motobazar.util.HibernateUtil;
 import motobazar.util.MotobazarException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
