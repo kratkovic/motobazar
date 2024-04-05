@@ -1,9 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package motobazar.model;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,11 +5,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import java.math.BigDecimal;
+import java.util.List;
 
-    @Entity
-    public class Dio extends Entitet{
-    
+@Entity
+public class Dio extends Entitet {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sifra")
@@ -47,11 +43,13 @@ import java.math.BigDecimal;
     @JoinColumn(name = "kategorija_sifra")
     private Kategorija kategorija;
 
-     public Dio() {
+    @OneToMany(mappedBy = "dio")
+    private List<Ocjena> ocjene;
+
+    public Dio() {
         super();
     }
 
-     
     public Dio(String naziv, String proizvodac, BigDecimal cijena, int kolicina, String opis, String slika_url, Korisnik korisnik, Kategorija kategorija) {
         this.naziv = naziv;
         this.proizvodac = proizvodac;
@@ -131,7 +129,8 @@ import java.math.BigDecimal;
     public void setKategorija(Kategorija kategorija) {
         this.kategorija = kategorija;
     }
+
+    public List<Ocjena> getOcjene() {
+        return ocjene;
+    }
 }
-
-    
-
