@@ -34,7 +34,6 @@ public class ObradaKategorija extends Obrada<Kategorija> {
     protected void kontrolaBrisanje() throws MotobazarException {
 
     }
-
     
     private void kontrolaNazivNull() throws MotobazarException {
         if (entitet.getNaziv() == null) {
