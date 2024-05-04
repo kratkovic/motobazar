@@ -23,7 +23,10 @@ public class ObradaOcjena extends Obrada<Ocjena> {
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-        // Možete implementirati dodatnu logiku brisanja ako je potrebno
+         // Provjera da li je ocjena povezana s drugim entitetima
+        if (entitet.getDio() != null || entitet.getKorisnik() != null) {
+            throw new MotobazarException("Ocjena je povezana s drugim entitetima i ne može biti obrisana.");
+        }
     }
 
     private void kontrolaOcjena() throws MotobazarException {
