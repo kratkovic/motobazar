@@ -23,7 +23,7 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-        // Nema posebne provjere za brisanje korisnika
+       
     }
 
     private void kontrolaIspravnostiPodataka() throws MotobazarException {
