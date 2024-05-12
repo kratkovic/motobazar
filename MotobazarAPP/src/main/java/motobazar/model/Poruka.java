@@ -43,7 +43,6 @@ public class Poruka extends Entitet{
         super();
     }
 
-    
     public Poruka(Korisnik posiljatelj, Korisnik primatelj, String sadrzaj, Date datumVrijeme) {
         this.posiljatelj = posiljatelj;
         this.primatelj = primatelj;
