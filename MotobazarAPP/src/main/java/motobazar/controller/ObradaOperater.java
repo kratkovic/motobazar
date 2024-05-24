@@ -57,10 +57,9 @@ public class ObradaOperater extends Obrada<Operater>{
 
     
     
-    
          
-      
-      
+     
+    
     @Override
     protected void kontrolaUnos() throws MotobazarException {
         
