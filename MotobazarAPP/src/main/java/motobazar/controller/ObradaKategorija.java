@@ -34,7 +34,7 @@ public class ObradaKategorija extends Obrada<Kategorija> {
     protected void kontrolaBrisanje() throws MotobazarException {
 
     }
-    
+
     private void kontrolaNazivNull() throws MotobazarException {
         if (entitet.getNaziv() == null) {
             throw new MotobazarException("Naziv mora biti postavljen");
@@ -75,8 +75,28 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         kontrolaNazivDupliUBazi();
     }
 
-    private void kontrolaOpis() {
+    private void kontrolaOpis() throws MotobazarException {
+        kontrolaOpisNull();
+        kontrolaOpisMinimalnaDuzina();
+        kontrolaOpisMaksimalnaDuzina();
+    }
 
+    private void kontrolaOpisNull() throws MotobazarException {
+        if (entitet.getOpis() == null) {
+            throw new MotobazarException("Opis mora biti postavljen");
+        }
+    }
+
+    private void kontrolaOpisMinimalnaDuzina() throws MotobazarException {
+        if (entitet.getOpis().trim().length() < 10) {
+            throw new MotobazarException("Opis mora imati minimalno 10 znakova");
+        }
+    }
+
+    private void kontrolaOpisMaksimalnaDuzina() throws MotobazarException {
+        if (entitet.getOpis().trim().length() > 500) {
+            throw new MotobazarException("Opis može imati maksimalno 500 znakova");
+        }
     }
 
     private void kontrolaNazivDupliUBazi() throws MotobazarException {
@@ -96,7 +116,7 @@ public class ObradaKategorija extends Obrada<Kategorija> {
             if (transaction != null) {
                 transaction.rollback();
             }
-           
+
             throw new MotobazarException("Došlo je do pogreške pri dohvatu kategorije iz baze");
         }
 
