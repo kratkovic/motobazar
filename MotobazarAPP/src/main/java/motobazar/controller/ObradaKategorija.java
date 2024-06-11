@@ -4,6 +4,9 @@
  */
 package motobazar.controller;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
@@ -30,10 +33,12 @@ public class ObradaKategorija extends Obrada<Kategorija> {
         kontrolaNazivMaksimalnaDuzina();
     }
 
-    @Override
+ @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-
+        kontrolaKategorijaNemaDijelove();
     }
+
+
 
     private void kontrolaNazivNull() throws MotobazarException {
         if (entitet.getNaziv() == null) {
@@ -122,6 +127,17 @@ public class ObradaKategorija extends Obrada<Kategorija> {
 
         if (kategorije != null && !kategorije.isEmpty()) {
             throw new MotobazarException("Kategorija s istim nazivom već postoji u bazi");
+        }
+    }
+
+   private void kontrolaKategorijaNemaDijelove() throws MotobazarException {
+        Long brojDijelova = (Long) session.createQuery(
+                "select count(d) from Dio d where d.kategorija = :kategorija")
+                .setParameter("kategorija", entitet)
+                .uniqueResult();
+
+        if (brojDijelova != null && brojDijelova > 0) {
+            throw new MotobazarException("Kategorija ne može biti obrisana jer je povezana s dijelovima.");
         }
     }
 }
