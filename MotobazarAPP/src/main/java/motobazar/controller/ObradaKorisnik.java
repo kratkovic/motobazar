@@ -21,9 +21,25 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
         kontrolaIspravnostiPodataka();
     }
 
-    @Override
+      @Override
     protected void kontrolaBrisanje() throws MotobazarException {
        
+    }
+
+    public void obrisiKorisnika(int sifra) throws MotobazarException {
+        Korisnik korisnik = session.find(Korisnik.class, sifra);
+        if (korisnik == null) {
+            throw new MotobazarException("Korisnik s tom šifrom ne postoji.");
+        }
+
+        try {
+            session.beginTransaction();
+            session.remove(korisnik);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new MotobazarException("Greška pri brisanju korisnika: " + e.getMessage());
+        }
     }
 
     private void kontrolaIspravnostiPodataka() throws MotobazarException {
