@@ -50,6 +50,7 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
         provjeriLozinku();
     }
 
+    
     private void provjeriIme() throws MotobazarException {
         if (entitet.getIme() == null || entitet.getIme().isEmpty()) {
             throw new MotobazarException("Ime korisnika mora biti unešeno");
