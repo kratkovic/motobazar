@@ -39,7 +39,6 @@ public class ObradaKategorija extends Obrada<Kategorija> {
     }
 
 
-
     private void kontrolaNazivNull() throws MotobazarException {
         if (entitet.getNaziv() == null) {
             throw new MotobazarException("Naziv mora biti postavljen");
