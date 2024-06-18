@@ -23,13 +23,17 @@ public class ObradaOcjena extends Obrada<Ocjena> {
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-         // Provjera da li je ocjena povezana s drugim entitetima
+        // Provjera da li je ocjena povezana s drugim entitetima
         if (entitet.getDio() != null || entitet.getKorisnik() != null) {
             throw new MotobazarException("Ocjena je povezana s drugim entitetima i ne može biti obrisana.");
         }
     }
 
     private void kontrolaOcjena() throws MotobazarException {
+        if (entitet == null) {
+            throw new MotobazarException("Entitet ne smije biti null.");
+        }
+        
         int ocjenaVrijednost = entitet.getOcjena();
 
         if (ocjenaVrijednost < 1 || ocjenaVrijednost > 5) {
