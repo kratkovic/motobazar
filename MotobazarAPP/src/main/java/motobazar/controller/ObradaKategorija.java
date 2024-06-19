@@ -4,9 +4,6 @@
  */
 package motobazar.controller;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 import java.util.List;
 import motobazar.model.Kategorija;
 import motobazar.util.MotobazarException;
