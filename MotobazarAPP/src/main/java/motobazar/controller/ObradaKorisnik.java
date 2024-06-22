@@ -21,7 +21,7 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
         kontrolaIspravnostiPodataka();
     }
 
-      @Override
+    @Override
     protected void kontrolaBrisanje() throws MotobazarException {
        
     }
