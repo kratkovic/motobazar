@@ -23,7 +23,21 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
 
     @Override
     protected void kontrolaBrisanje() throws MotobazarException {
-       
+
+        if (imaPovezaneNarudzbe(entitet)) {
+            throw new MotobazarException("Korisnik ne može biti obrisan jer ima povezane narudžbe.");
+        }
+
+    }
+
+    private boolean imaPovezaneNarudzbe(Korisnik korisnik) {
+
+        Long brojPovezanihNarudzbi = session.createQuery(
+                "SELECT COUNT(n) FROM Narudzba n WHERE n.korisnik = :korisnik", Long.class)
+                .setParameter("korisnik", korisnik)
+                .getSingleResult();
+
+        return brojPovezanihNarudzbi > 0;
     }
 
     public void obrisiKorisnika(int sifra) throws MotobazarException {
@@ -50,7 +64,6 @@ public class ObradaKorisnik extends Obrada<Korisnik> {
         provjeriLozinku();
     }
 
-    
     private void provjeriIme() throws MotobazarException {
         if (entitet.getIme() == null || entitet.getIme().isEmpty()) {
             throw new MotobazarException("Ime korisnika mora biti unešeno");
